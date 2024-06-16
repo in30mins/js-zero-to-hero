@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="special">
+      <label for="name">Name:</label>
+      <input type="text" id="name" /><br /><br />
+      <button id="b1" onclick="change()">Change-Color</button>
+    </div>
+    <script>
+      let btn = document.getElementById("b1");
+      btn.onclick;
+      function change() {
+        document.body.style.backgroundColor = "green";
+      }
+      //setTimeout,setIntervel
+      //   setTimeout(function () {
+      //     alert("setTimout");
+      //   }, 1000);
+      //   setInterval(function () {
+      //     alert("setIntervel");
+      //   }, 2000);
+
+      //Map
+      var year = [2000, 2004, 1999, 1997, 1982];
+      age = [];
+      year.map((m) => {
+        let age = 2021 - m;
+        return age;
+        // console.log(m);
+      });
+      console.table(year);
+      console.table(age);
+      //filter
+      var f1 = [23, 48, 64, 75, 86, 13, 94, 24];
+      let even = f1.filter((e) => {
+        return e % 2 == 0;
+      });
+      console.log(even);
+      //reduce
+      var r1 = [45, 53, 78, 99, 36, 74];
+      let k = r1.reduce((acc, r) => {
+        if (acc > r) {
+          return acc;
+        } else {
+          return r;
+        }
+      }, r1[0]);
+      console.log(k);
+      //find
+      let places = ["Hyderabad", "Delhi", "Vizag", "Chennai"];
+      var pla = places.find((ele) => {
+        return ele.startsWith("V"); //some,Every
+      });
+      console.log(pla);
+      var marks = [45, 35, 76, 86, 36];
+      let pass = marks.every((mark) => {
+        return mark > 34;
+      });
+      console.log(pass);
+      //spreed
+      let sp1 = [45, 6, 4, 83, 45, 27, 16];
+      let sp2 = [35, 74, 86, 25];
+      let s3 = [...sp1, ...sp2];
+      console.log(s3);
+      //strictmode
+      "use strict"
+      let x =10;
+    </script>
+  </body>
+</html>

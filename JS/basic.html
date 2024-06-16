@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JS-Basics</title>
+  </head>
+  <body>
+    <h1>JS-Basics</h1>
+    <h2 id="name">Hello world</h2>
+    <button onclick="changeName()">click</button>
+
+    <script>
+      changeName = () => {
+        document.getElementById("name").innerHTML = "Hello Raj...";
+      };
+      var a = 100;
+      console.log(a);
+      let b = 200; //es6 block level scope, using var using no scope
+      console.log(b);
+      const c = 300; //es6
+      console.log(c);
+      var big = a > b ? a : b;
+      document.write(big);
+      //   TypeConversion
+      //   1. Implicity 2.Explicity
+
+      //conditional
+
+      var a1 = 21;
+      var a2 = 34;
+      var a3 = 29;
+      if (a1 > a2) {
+        console.log(a1);
+      } else {
+        console.log(a2);
+      }
+
+      if (a3 > 20) {
+        document.write(a3 + " is grater than 20" + "<br />");
+      } else if (a3 == 20) {
+        document.write(a3 + " is equal" + "<br />");
+      } else {
+        document.write(a3 + " is lessthan 20");
+      }
+
+      //switch
+      let today = 65;
+      switch (today) {
+        case 1:
+          console.log("Monday");
+          break;
+        case 2:
+          console.log("Tusday");
+          break;
+        case 3:
+          console.log("wednesday");
+          break;
+        case 4:
+          console.log("Thursday");
+          break;
+        case 6:
+          console.log("Saterday");
+          break;
+        case 7:
+          console.log("Sunday");
+          break;
+        default:
+          console.log("no day");
+          break;
+      }
+
+      //Loops -> for(in,of),while,do-while,continue,break
+      var sum = 0;
+      for (let count = 1; count < 10; count++) {
+        sum = sum + count;
+      }
+      console.log(sum);
+
+      var a5 = 1;
+      while (a5 < 5) {
+        console.log(a5);
+        a5++;
+      }
+      do {
+        console.log(a5);
+        a5++;
+      } while (a5 < 6);
+
+      //Template Literal
+      var a4 = 78;
+      console.log(`number is ${a4} `);
+      //for in loop
+      var ob = ["ab", "bc", "cd", "de"];
+      for (i in ob) {
+        console.log(i);
+      }
+      //for of loop
+      var fru = ["ki", "nhg", "kj", "bli"];
+      for (i1 of fru) {
+        console.log(i1);
+      }
+      //Functions
+      //1.named function
+      //2.anonymous function
+      //3.immediately invoked function exprsion
+      //4.arrow function
+      function name() {
+        console.log("n1");
+        console.log("n2");
+        console.log("n3");
+        console.log("n4");
+      }
+      name();
+      function name1(int1, int2) {
+        console.log(int1 + int2);
+      }
+      name1(8, 5);
+      let name2 = function () {
+        console.log("anonimus");
+      };
+      name2();
+      const name3 = () => {
+        console.log("Arrow Function");
+      };
+      name3();
+      //arrays
+      var movies = ["Eagle", "Simha", "Hanuman"];
+      var movies1 = new Array("Lion", "Tiger", "Dragon");
+      console.log(movies);
+      console.log(movies1);
+      console.log(movies.length);
+      console.log(typeof movies1);
+      movies.push("dee"); //last add
+      console.log(movies);
+      console.log(movies.pop());
+      console.log(movies);
+      movies.unshift("dee"); //first add
+      console.log(movies);
+      console.log(movies.shift());
+      console.log(movies);
+      console.log(movies.indexOf("Hanuman"));
+      console.log(movies.slice(1, 3));
+      //scopes -> Global,Local,Block
+      var s = 10; //GLobal
+      function f1() {
+        var s2 = 10; //Local or functional
+      }
+      {
+        var s3 = 23; //Block
+      }
+      //forEach
+      var salaries = [30000, 42000, 39000, 19999, 20000];
+      salaries.forEach((s, index) => {
+        console.log(s);
+        let inc = s / 10;
+        salaries[index] = s + inc;
+      });
+      console.log(salaries);
+      //set
+      let set1 = new Set();
+      set1.add("raju");
+      set1.add("erw");
+      set1.add("raju");
+      console.log(set1);
+      //Object
+      let person1 = {
+        name: "person1",
+        age: 45,
+        graduation: true,
+        assets: {
+          land: 2,
+          house: "yes",
+        },
+      };
+      person1["place"] = "Hyderabad";
+      console.log(person1);
+      console.log(person1.age);
+      //Object->second
+      let person2 = new Object();
+      person2.name = "person2";
+      console.log(person2.name);
+      //Object->third
+      function user(n, a, p) {
+        this.name = n;
+        this.age = a;
+        this.place = p;
+      }
+      let user1 = new user("user1", 32, "xyz");
+      console.log(user1);
+      let user2 = new user("user2", 22, "sfr");
+      console.log(user2);
+      //Object -> fourth
+      let user3 = Object.create(user1);
+      console.log("user1:");
+      console.log(user1);
+      user3.name = "jih";
+      user3.age = 76;
+      console.log("user3 : ");
+      console.log(user3);
+      //console method
+      let s9 = "dre";
+      console.log(s9);
+      console.info(s9);
+      console.warn(s9);
+      console.error(s9);
+      console.table(["dt", "er", "dhf"]); //object also give
+      //   console.clear(s9);
+      console.assert(10 > 34, "condition false");
+      // .count, .countreset(), .time(), .Timelog(), .timeend(), .group(), .groupend()
+      //callback function
+      function first(test) {
+        test();
+        console.log("this is first function");
+      }
+      function second() {
+        console.log("this is second function");
+      }
+      first(second);
+      var arr = [4, 5, 7, 2, 8, 24];
+
+      function square(arr) {
+        squares = [];
+        for (ele of arr) {
+          let res = ele * ele;
+          squares.push(res);
+        }
+        console.log(squares);
+      }
+      square(arr);
+
+      console.log(this);
+
+      //call,bind,apply
+      var salary = 20000;
+      function getSalary(a, b) {
+        console.log(this.salary);
+        console.log(a, b);
+      }
+
+      employee = {
+        salary: 30000,
+      };
+      employee1 = {
+        salary: 40000,
+      };
+      employee2 = {
+        salary: 60000,
+      };
+      getSalary.call(employee, 45, 35);
+      getSalary.apply(employee1, [45, 23]);
+      var f1 = getSalary.bind(employee2, 56, 34);
+      f1();
+      //date
+      let date = new Date("2024-02-13");
+      console.log(date);
+      //math
+      let x = Math.floor(3.8);
+      console.log(x);
+
+      //string
+      let s4 = "JavaScript";
+      console.log(s4.charAt("a"));
+      //indexOf,toUpperCase(),toLowerCase(),concat(),
+    </script>
+  </body>
+</html>
